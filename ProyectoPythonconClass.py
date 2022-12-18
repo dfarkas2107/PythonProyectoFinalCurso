@@ -1,14 +1,11 @@
 # Empiezo con un TRY para el manejo de excepciones
 try:
-    import sys # top of your code 
     import pandas as pd
     import krakenex
     import requests
     import streamlit as st
     from pykrakenapi import KrakenAPI
-    import plotly.graph_objects as go
     import datetime as dt
-    import plotly.express as px
     import altair as alt
     from datetime import date
     from datetime import datetime
