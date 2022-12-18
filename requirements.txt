@@ -3,9 +3,7 @@ krakenex
 requests
 streamlit
 pykrakenapi
-plotly.graph_objects
 datetime
-plotly.express
 altair
 datetime
 datetime
