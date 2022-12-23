@@ -52,11 +52,12 @@ try:
 # Genero en streamlit un sidebar que permite elegir 5 pares de monedas.Es posible elegir todas,pero no creemos que sea util para este trabajo.
     input_lista = st.sidebar.selectbox(
         'Elige una moneda:',
-        ('BITUSD',
+        ('ADAUSD',
+         'BITUSD',
          'EWTUSD',
          'ACAUSD',
          'ACHUSD',
-         'ADAUSD')
+         )
     )
 # Creo encabezados y sub encabezados segnn el dia y segun la moneda que el usuario eligio:
     subtitulo = st.write('Evolucion de ' + input_lista)
