@@ -15,10 +15,10 @@ try:
     resp = requests.get('https://api.kraken.com/0/public/AssetPairs')
     resp = resp.json()
 
-    euro_pairs = []
+    usd_pairs = []
     for pair in resp['result']:
             if pair.endswith('USD'):
-                euro_pairs.append(pair)
+                usd_pairs.append(pair)
 
 # Defino las caracteristicas de theme de la interfaz:
 
@@ -62,7 +62,7 @@ try:
 # Creo encabezados y sub encabezados segnn el dia y segun la moneda que el usuario eligio:
     subtitulo = st.write('Evolucion de ' + input_lista)
     Horadia = st.text(today)
-
+    
 # Genero la request a la API de Kraken para que busque la informacion de las monedas que el usuario haya seleccionado:
     resp = requests.get('https://api.kraken.com/0/public/OHLC?pair=' +
                         input_lista+'&amp;since=1647625329&amp;interval=60')
@@ -75,7 +75,10 @@ try:
 # Tengo que definir que tipo de variable seran cada columna,en este caso se transforman a variables numericas
     columnas = ['open', 'high', 'low', 'close', 'vwap', 'volume', 'count']
     df[columnas] = df[columnas].apply(pd.to_numeric)
-
+    
+    minimo=df['close'].min()
+    maximo=df['close'].max()
+    Rango=st.write('1 day Range   '+ str(minimo) +' - '+ str(maximo))
 # La variable unixtimestap es necesario convertirla tambien,en este caso a una variable de tiempo
     df['unixtimestap'] = pd.to_datetime(df['unixtimestap'], unit="s")
 
