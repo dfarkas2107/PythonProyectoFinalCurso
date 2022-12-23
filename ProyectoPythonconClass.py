@@ -91,10 +91,10 @@ try:
 
     df2['close'] = df2['close'].apply(pd.to_numeric)
 
-    fig = alt.Chart(df).mark_line(color="red").encode(alt.X('unixtimestap', scale=alt.Scale(zero=False),
+    fig = alt.Chart(df2).mark_line(color="red").encode(alt.X('unixtimestap', scale=alt.Scale(zero=False),
                                                             axis=alt.Axis(title='', grid=False)),
                                                       alt.Y("close", scale=alt.Scale(zero=False),
-                                                            axis=alt.Axis(title='', grid=False)))
+                                                            axis=alt.Axis(title='', grid=False))).interactive()
 
 
 # Creo los datos necesario para hacer el grafico de media movil
