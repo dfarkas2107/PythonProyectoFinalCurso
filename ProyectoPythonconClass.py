@@ -60,8 +60,9 @@ try:
          )
     )
 # Creo encabezados y sub encabezados segnn el dia y segun la moneda que el usuario eligio:
-    subtitulo = st.write('Evolucion de ' + input_lista)
+
     Horadia = st.text(today)
+    subtitulo = st.write('Evolucion de ' + input_lista)
     
 # Genero la request a la API de Kraken para que busque la informacion de las monedas que el usuario haya seleccionado:
     resp = requests.get('https://api.kraken.com/0/public/OHLC?pair=' +
