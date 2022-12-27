@@ -96,9 +96,9 @@ try:
     df2['close'] = df2['close'].apply(pd.to_numeric)
 
     fig = alt.Chart(df2).mark_line(color="red").encode(alt.X('unixtimestap', scale=alt.Scale(zero=False),
-                                                            axis=alt.Axis(title='', grid=False)),
+                                                            axis=alt.Axis(title='', grid=True)),
                                                       alt.Y("close", scale=alt.Scale(zero=False),
-                                                            axis=alt.Axis(title='', grid=False))).interactive()
+                                                            axis=alt.Axis(title='', grid=True))).interactive()
 
 
 # Creo los datos necesario para hacer el grafico de media movil
@@ -107,9 +107,9 @@ try:
     dfmeunixtimestapmovil = df.assign(meunixtimestapmovil=dfpromedio)
 
     mediamovil = alt.Chart(dfmeunixtimestapmovil).mark_line().encode(alt.X('unixtimestap', scale=alt.Scale(zero=False),
-                                                                           axis=alt.Axis(grid=False)),
+                                                                           axis=alt.Axis(grid=True)),
                                                                      alt.Y("meunixtimestapmovil", scale=alt.Scale(zero=False),
-                                                                           axis=alt.Axis(grid=False)))
+                                                                           axis=alt.Axis(grid=True)))
 
     dosgraficos = (mediamovil + fig)
 # Creo un grafico que muestra la evolucion del precio y la media movil para utilizar luego
