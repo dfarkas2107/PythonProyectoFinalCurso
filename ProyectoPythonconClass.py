@@ -23,7 +23,7 @@ try:
 # Defino las caracteristicas de theme de la interfaz:
 
 # Creo una funcion para determinar las caracteristicas de las graficas.Algunas de ellas son iguales para todas,por eso es mas eficiente haer una funcion.
-    today = datetime.now()
+    today = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     st.set_page_config(layout="wide")
 
 
